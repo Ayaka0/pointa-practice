@@ -1,5 +1,10 @@
 #include<stdio.h>
 
+void set999(int* p)
+{
+	*p = 999;
+}
+
 int main(void)
 {
 	int x = 123;
@@ -15,11 +20,9 @@ int main(void)
 	int *p;
 
 	if (sw == 0)
-		p = &x; //pはxを指す
+		set999(&x); //xの変更を依頼
 	else 
-		p = &y; //pはyを指す
-
-	*p = 999;
+		set999(&y); //yの変更を依頼
 
 	printf("x = %d\n", x);
 	printf("y = %d\n", y);
