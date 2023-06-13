@@ -1,21 +1,24 @@
 #include<stdio.h>
 
-void adjust_point(int* n)
+
+void sum_diff(int n1, int n2, int* sum, int *diff)
 {
-	if (*n < 0) *n = 0;
-	if (*n > 100) *n = 100;
+	*sum = n1 + n2;
+	*diff = n1 > n2 ? n1 - n2 : n2 - n1;
 }
 
 int main(void)
 {
-	int point;
+	int a, b;
+	int wa = 0, sa = 0;
 
-	printf("テストの点数：");
-	scanf("%d", &point);
+	puts("2つの整数を入力せよ");
+	printf("整数A；"); scanf("%d", &a);
+	printf("整数B；"); scanf("%d", &b);
 
-	adjust_point(&point);
+	sum_diff(a, b, &wa, &sa);
 
-	printf("点数は%d点です。\n", point);
+	printf("和は%dで差は%dです。\n", wa, sa);
 
 	return 0;
 }
