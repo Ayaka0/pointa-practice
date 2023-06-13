@@ -2,15 +2,27 @@
 
 int main(void)
 {
-	int n;
-	double x;
-	int a[3];
+	int x = 123;
+	int y = 456;
+	int sw;
 
-	printf("n   のアドレス：%p\n", &n);
-	printf("x   のアドレス：%p\n", &x);
-	printf("a[0]のアドレス：%p\n", &a[0]);
-	printf("a[1]のアドレス：%p\n", &a[1]);
-	printf("a[2]のアドレス：%p\n", &a[2]);
+	printf("x = %d\n", x);
+	printf("y = %d\n", y);
+
+	printf("変更するのは【0…x / 1…y】 = ");
+	scanf("%d", &sw);
+
+	int *p;
+
+	if (sw == 0)
+		p = &x; //pはxを指す
+	else 
+		p = &y; //pはyを指す
+
+	*p = 999;
+
+	printf("x = %d\n", x);
+	printf("y = %d\n", y);
 
 	return 0;
 }
