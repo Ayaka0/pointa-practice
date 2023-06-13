@@ -1,31 +1,21 @@
 #include<stdio.h>
 
-void set999(int* p)
+void adjust_point(int* n)
 {
-	*p = 999;
+	if (*n < 0) *n = 0;
+	if (*n > 100) *n = 100;
 }
 
 int main(void)
 {
-	int x = 123;
-	int y = 456;
-	int sw;
+	int point;
 
-	printf("x = %d\n", x);
-	printf("y = %d\n", y);
+	printf("テストの点数：");
+	scanf("%d", &point);
 
-	printf("変更するのは【0…x / 1…y】 = ");
-	scanf("%d", &sw);
+	adjust_point(&point);
 
-	int *p;
-
-	if (sw == 0)
-		set999(&x); //xの変更を依頼
-	else 
-		set999(&y); //yの変更を依頼
-
-	printf("x = %d\n", x);
-	printf("y = %d\n", y);
+	printf("点数は%d点です。\n", point);
 
 	return 0;
 }
