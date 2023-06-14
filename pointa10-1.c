@@ -1,24 +1,26 @@
 #include<stdio.h>
 
 
-void sum_diff(int n1, int n2, int* sum, int *diff)
+void swap(int* x, int* y)
 {
-	*sum = n1 + n2;
-	*diff = n1 > n2 ? n1 - n2 : n2 - n1;
+	int temp = *x;
+	*x = *y;
+	*y = temp;
 }
 
 int main(void)
 {
 	int a, b;
-	int wa = 0, sa = 0;
 
-	puts("2‚Â‚Ì®”‚ğ“ü—Í‚¹‚æ");
-	printf("®”AG"); scanf("%d", &a);
-	printf("®”BG"); scanf("%d", &b);
+	puts("‚Q‚Â‚Ì®”‚ğ“ü—Í‚¹‚æ");
+	printf("®”a:"); scanf("%d", &a);
+	printf("®”b:"); scanf("%d", &b);
+	
+	swap(&a, &b);
 
-	sum_diff(a, b, &wa, &sa);
-
-	printf("˜a‚Í%d‚Å·‚Í%d‚Å‚·B\n", wa, sa);
+	puts("‚±‚ê‚ç‚Ì’l‚ğŒğŠ·‚µ‚Ü‚µ‚½");
+	printf("®”A‚Í%d‚Å‚·B\n", a);
+	printf("®”B‚Í%d‚Å‚·B\n", b);
 
 	return 0;
 }
