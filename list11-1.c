@@ -6,10 +6,10 @@ int main(void)
 	char* p[] = { "PAUL", "X", "MAC" };
 
 	int i;
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < sizeof(a)/sizeof(a[0]); i++)
 		printf("a[%d] = \"%s\"\n", i, a[i]);
 
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < sizeof(p) / sizeof(p[0]); i++)
 		printf("p[%d] = \"%s\"\n", i, p[i]);
 
 	return 0;
