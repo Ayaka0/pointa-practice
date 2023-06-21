@@ -2,13 +2,15 @@
 
 int main(void)
 {
-	char* p = "123";
+	char a[][5] = { "LISP", "C", "Ada" };
+	char* p[] = { "PAUL", "X", "MAC" };
 
-	printf("p = \"%s\"\n", p);
+	int i;
+	for (i = 0; i < 3; i++)
+		printf("a[%d] = \"%s\"\n", i, a[i]);
 
-	p = "456";
-
-	printf("p = \"%s\"\n", p);
+	for (i = 0; i < 3; i++)
+		printf("p[%d] = \"%s\"\n", i, p[i]);
 
 	return 0;
 }
